@@ -12,13 +12,20 @@ class App extends Component {
       firstname: "",
       github: ""
     },
-    isLogged: false
+    isLogged: false,
+    searchbar: ""
   };
 
   handleChange = e => {
     const data = this.state.data;
     data[e.target.name] = e.target.value;
     this.setState({ data });
+  };
+
+  handleSearch = e => {
+    this.setState({
+      searchbar: e.target.value
+    });
   };
 
   handleSubmit = e => {
@@ -60,7 +67,11 @@ class App extends Component {
             onSubmit={this.handleSubmit}
             data={this.state.data}
           />
-          <List deleteStudent={this.deleteStudent} />
+          <List
+            deleteStudent={this.deleteStudent}
+            searchbar={this.state.searchbar}
+            handleSearch={this.handleSearch}
+          />
         </div>
       </>
     );

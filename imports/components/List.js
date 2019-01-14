@@ -5,23 +5,30 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const List = props => {
+  let filteredStudent = props.students.map(student => {
+    if (student.data.name.toLowerCase().indexOf(props.searchbar) !== -1) {
+      const { _id, data } = student;
+      return (
+        <li key={_id}>
+          <span>student:</span>
+          <Link to={`/student/${_id}`}>
+            {data.name} {data.firstname}
+          </Link>
+          <button onClick={() => props.deleteStudent(_id)}>delete</button>
+        </li>
+      );
+    }
+  });
   return (
     <div className="right-side">
       <h2>Students</h2>
-      <ul>
-        {props.students.map(student => {
-          const { _id, data } = student;
-          return (
-            <li key={_id}>
-              <span>student:</span>
-              <Link to={`/student/${_id}`}>
-                {data.name} {data.firstname}
-              </Link>
-              <button onClick={() => props.deleteStudent(_id)}>delete</button>
-            </li>
-          );
-        })}
-      </ul>
+      <input
+        type="text"
+        name="searchbar"
+        value={props.searchbar}
+        onChange={props.handleSearch}
+      />
+      <ul>{filteredStudent}</ul>
     </div>
   );
 };
