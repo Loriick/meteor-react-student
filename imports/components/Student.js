@@ -17,6 +17,7 @@ const Student = props => {
       <a href={students.data.github} target="_blank">
         github link
       </a>
+      <p>{students.exercice[0].data.excercise}</p>
     </div>
   );
 };
