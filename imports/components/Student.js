@@ -17,7 +17,13 @@ const Student = props => {
       <a href={students.data.github} target="_blank">
         github link
       </a>
-      <p>{students.exercice[0].data.excercise}</p>
+      <ul>
+      {students.exercice.map(student => {
+        return(
+        <li key={student._id}>{student.data.excercise}: {student.data.notes}</li>
+        )
+      })}
+      </ul>
     </div>
   );
 };
