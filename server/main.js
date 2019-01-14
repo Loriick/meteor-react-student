@@ -1,3 +1,3 @@
 import { Meteor } from "meteor/meteor";
 
-import Student from "../imports/api/Student";
+import { Student, Notes } from "../imports/api/Student";
