@@ -7,6 +7,7 @@ import Student from "./Student";
 import NotFound from "./NotFound";
 import Signin from "./Signin";
 import Signup from "./Signup";
+import AddNotes from "./AddNotes";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
           <Route path="/student/:id" component={Student} />
           <Route path="/signin" component={Signin} />
           <Route path="/signin" component={Signup} />
+          <Route path="/addnotes" component={AddNotes} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

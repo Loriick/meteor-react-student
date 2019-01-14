@@ -9,18 +9,7 @@ const Header = ({ isLogged, name = "Admin" }) => {
       </h3>
       <ul>
         <li>
-          {isLogged ? (
-            <span>hello {name}</span>
-          ) : (
-            <Link to="/signin">Sign in</Link>
-          )}
-        </li>
-        <li>
-          {isLogged ? (
-            <span to="/">Log out</span>
-          ) : (
-            <Link to="/signup">Sign up</Link>
-          )}
+          <Link to="/addnotes">Add a note</Link>
         </li>
       </ul>
     </nav>
