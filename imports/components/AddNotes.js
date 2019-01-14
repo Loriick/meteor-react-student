@@ -43,7 +43,7 @@ class AddNotes extends Component {
             <option value="---">---</option>
             {this.props.students.map(student => {
               return (
-                <option value={student.data.name} key={student._id}>
+                <option value={student._id} key={student._id}>
                   {student.data.firstname} {student.data.name}
                 </option>
               );
