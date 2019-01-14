@@ -9,8 +9,31 @@ body {
   font-family: "Open sans";
 }
 
+nav {
+  height: 5vh;
+  display: flex;
+  background: red;
+  width: 100vw;
+  align-items: center;
+}
+
+nav h3 {
+  margin-right: auto;
+  padding: 0 4%;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+  cursor: pointer;
+  margin-left: 3%;
+}
+
 .App {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
 }
@@ -20,6 +43,13 @@ body {
   width: 50%;
   height: 100%;
   position: relative;
+}
+
+.left-side {
+  overflow: hidden;
+}
+.right-side {
+  overflow: scroll;
 }
 
 .form-container {
@@ -82,29 +112,31 @@ body {
 
 .right-side ul {
   width: 80%;
-  display: block;
-  margin: 5% auto;
-  padding: 30px;
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
 }
 .right-side ul > li {
   list-style: none;
   padding: 5px;
   font-size: 20px;
+  width: 80%;
+  display: block;
+  margin: 5% auto;
+  padding: 30px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+  color: black;
 }
 
 .right-side ul li > span {
   margin-right: 10px;
   font-weight: 700;
   text-decoration: underline;
+  color: black;
 }
 .right-side ul li > a {
   text-decoration: none;
-  color: red;
 }
 
 .right-side button {
-  margin-top: 10px;
+  margin-left: 10px;
   padding: 10px 30px;
   border: none;
   outline: none;

@@ -3,6 +3,7 @@ import Form from "./Form";
 import List from "./List";
 
 import { Students } from "../api/Student";
+import Header from "./Header";
 
 class App extends Component {
   state = {
@@ -10,7 +11,8 @@ class App extends Component {
       name: "",
       firstname: "",
       github: ""
-    }
+    },
+    isLogged: false
   };
 
   handleChange = e => {
@@ -43,17 +45,24 @@ class App extends Component {
       isOpen: !prevState.isOpen
     }));
   };
+
+  click = id => {
+    console.log(id);
+  };
   render() {
     return (
-      <div className="App">
-        <Form
-          isOpen={this.state.isOpen}
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
-          data={this.state.data}
-        />
-        <List deleteStudent={this.deleteStudent} />
-      </div>
+      <>
+        <Header isLogged={this.state.isLogged} />
+        <div className="App">
+          <Form
+            isOpen={this.state.isOpen}
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
+            data={this.state.data}
+          />
+          <List deleteStudent={this.deleteStudent} />
+        </div>
+      </>
     );
   }
 }

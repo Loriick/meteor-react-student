@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default ({ onChange, onSubmit, data }) => {
+const Form = ({ onChange, onSubmit, data }) => {
   return (
     <div className="left-side">
       <div className="form-container">
@@ -46,3 +47,11 @@ export default ({ onChange, onSubmit, data }) => {
     </div>
   );
 };
+
+Form.propTypes = {
+  onchange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  data: PropTypes.object
+};
+
+export default Form;
