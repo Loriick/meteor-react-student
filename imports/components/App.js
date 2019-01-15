@@ -10,7 +10,8 @@ class App extends Component {
     data: {
       name: "",
       firstname: "",
-      github: ""
+      github: "",
+      email: ""
     },
     isLogged: false,
     searchbar: ""
@@ -38,7 +39,8 @@ class App extends Component {
       data: {
         name: "",
         firstname: "",
-        github: ""
+        github: "",
+        email: ""
       }
     });
   };

@@ -8,7 +8,6 @@ const Student = props => {
   if (!students) {
     return <div>loading</div>;
   }
-
   return (
     <div>
       <Header />
@@ -18,6 +17,9 @@ const Student = props => {
       </h3>
       <a href={students.data.github} target="_blank">
         github link
+      </a>
+      <a href={`mailto:${students.data.email}`} target="_blank">
+        envoyez un mail
       </a>
       <ul>
         {students.exercice.map(student => {

@@ -33,6 +33,17 @@ const Form = ({ onChange, onSubmit, data }) => {
             <input
               onChange={onChange}
               type="text"
+              name="email"
+              id="email"
+              value={data.email}
+              required
+            />
+            <label htmlFor="github">email</label>
+          </div>
+          <div className="input-container">
+            <input
+              onChange={onChange}
+              type="text"
               name="github"
               id="github"
               value={data.github}
