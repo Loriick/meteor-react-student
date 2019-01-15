@@ -20,7 +20,6 @@ class AddNotes extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.data);
     const data = this.state.data;
     Notes.insert({ data });
 
