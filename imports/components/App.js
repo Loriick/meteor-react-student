@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Form from "./Form";
 import List from "./List";
-
+import {BrowserRouter as Router} from "react-router-dom";
 import { Students } from "../api/Student";
 import Header from "./Header";
+import { Meteor } from "meteor/meteor";
 
 class App extends Component {
   state = {
@@ -14,8 +15,15 @@ class App extends Component {
       email: ""
     },
     isLogged: false,
-    searchbar: ""
+    searchbar: "",
+    currentUser: null
   };
+
+  // async componentDidMount(){
+  //   const currentUser =  Meteor.user();
+  //   console.log(currentUser);
+  //    this.setState({currentUser})
+  // }
 
   handleChange = e => {
     const data = this.state.data;
@@ -31,9 +39,19 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.data);
-    const data = this.state.data;
-    Students.insert({ data });
+    const {email , firstname , github , name} = this.state.data;
+
+    const student = {
+      email: email,
+      password: email,
+      profile: {
+        firstname: firstname,
+        name: name,
+      },
+      github: github                    
+    }
+
+    Meteor.call('insertStudents', student);
 
     this.setState({
       data: {
@@ -46,7 +64,7 @@ class App extends Component {
   };
 
   deleteStudent = id => {
-    Students.remove(id);
+    Meteor.call('deleteStudents' , id);
   };
 
   toggleBool = () => {
@@ -59,6 +77,9 @@ class App extends Component {
     console.log(id);
   };
   render() {
+   //this.state.currentUser !== null && console.log(this.state.currentUser);
+   const currentUser =  Meteor.userId();
+    console.log(currentUser);
     return (
       <>
         <Header isLogged={this.state.isLogged} />

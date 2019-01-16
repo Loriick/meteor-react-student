@@ -6,13 +6,13 @@ import PropTypes from "prop-types";
 
 const List = props => {
   let filteredStudent = props.students.map(student => {
-    if (student.data.name.toLowerCase().indexOf(props.searchbar) !== -1) {
+    if (student.data.profile.name.toLowerCase().indexOf(props.searchbar) !== -1) {
       const { _id, data } = student;
       return (
         <li key={_id}>
           <span>student:</span>
           <Link to={`/student/${_id}`}>
-            {data.name} {data.firstname}
+            {data.profile.name} {data.profile.firstname}
           </Link>
           <button onClick={() => props.deleteStudent(_id)}>delete</button>
         </li>

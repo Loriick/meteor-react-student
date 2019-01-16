@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ isLogged, name = "Admin" }) => {
+const Header = ({ isLogged, name = "Admin" , logout}) => {
   return (
     <nav className="menu">
       <h3>

@@ -1,8 +1,10 @@
 import React , {Component} from "react";
 import {Redirect} from 'react-router-dom';
+import { Meteor } from "meteor/meteor";
 class Signin extends Component {
   state= {
     data: {},
+    isLogged: false
   }
 
   handleChange = e => {
@@ -13,8 +15,16 @@ class Signin extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const data = this.state.data;
+    const {email , password } = this.state.data;
+    try{
+      Meteor.loginWithPassword(email , password , () =>{
+        this.setState({isLogged: true})
+      })
+    } catch(err){
+        console.error(`error login ${err}`);
+    }
   }
+  
 
   render(){
     if(this.state.isLogged){

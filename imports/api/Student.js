@@ -8,4 +8,5 @@ export const Students = new Mongo.Collection("students" , {
         return doc;
     }
 });
+
 export const Notes = new Mongo.Collection("notes");
