@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "./Form";
-import List from "./List";
+import Signin from "./Signin";
+import Signup from "./Signup";
 import {BrowserRouter as Router} from "react-router-dom";
 import { Students } from "../api/Student";
 import Header from "./Header";
@@ -16,14 +17,10 @@ class App extends Component {
     },
     isLogged: false,
     searchbar: "",
-    currentUser: null
+    currentUser: null,
+    signIn: true,
   };
 
-  // async componentDidMount(){
-  //   const currentUser =  Meteor.user();
-  //   console.log(currentUser);
-  //    this.setState({currentUser})
-  // }
 
   handleChange = e => {
     const data = this.state.data;
@@ -73,30 +70,25 @@ class App extends Component {
     }));
   };
 
-  click = id => {
-    console.log(id);
+  clickConnect = () => {
+    this.setState({
+      signIn: false
+    })
   };
   render() {
-   //this.state.currentUser !== null && console.log(this.state.currentUser);
    const currentUser =  Meteor.userId();
-    console.log(currentUser);
     return (
-      <>
-        <Header isLogged={this.state.isLogged} />
+      <div>
+        <Header page='signIn' eventClick={this.clickConnect}/>
         <div className="App">
-          <Form
-            isOpen={this.state.isOpen}
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            data={this.state.data}
-          />
-          <List
-            deleteStudent={this.deleteStudent}
-            searchbar={this.state.searchbar}
-            handleSearch={this.handleSearch}
-          />
+        {this.state.signIn ?         
+          <Signin/>
+          :
+          <Signup/>
+        }
+          <img src="assets/img/illustration.png" alt="illustration"/>
         </div>
-      </>
+      </div>
     );
   }
 }

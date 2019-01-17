@@ -31,12 +31,22 @@ class Signin extends Component {
       return <Redirect to='/' />
     }
     return(
-      <div className="signIn">
-      <h1>Sign In</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="email" placeholder="Adresse Email" onChange={this.handleChange}/>
-          <input type="password" name="password" placeholder="Mot de Passe" onChange={this.handleChange}/>
-          <input type="submit" value="Envoyer"/>
+      <div className="form">
+        <h1 className="form-title">Bienvenue sur <span>Meteor School</span></h1>
+        <h4 className="form-subtitle">Connectez-vous</h4>
+        <form onSubmit={this.handleSubmit} className="form-container">
+          <div className="form-input">
+             <label>Adresse Email</label>
+             <input type="text" name="email" onChange={this.handleChange}/>
+          </div>
+          <div className="form-input">
+             <label>Mot de passe</label>
+             <input type="password" name="password" onChange={this.handleChange}/>
+          </div>
+          <div className="form-footer">
+            <a href="#">Mot de passe oublié ?</a>
+            <input type="submit" value="Se connecter" className="btn btn-blue"/>
+          </div>
         </form>
       </div>
     );

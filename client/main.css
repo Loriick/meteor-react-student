@@ -9,15 +9,15 @@ body {
   font-family: "Open sans";
 }
 
-nav {
+/* nav {
   height: 5vh;
   display: flex;
   background: red;
   width: 100vw;
   align-items: center;
-}
+} */
 
-nav h3 {
+/* nav h3 {
   margin-right: auto;
   padding: 0 4%;
   cursor: pointer;
@@ -146,4 +146,4 @@ nav ul li {
   background: red;
   font-size: 16px;
   color: white;
-}
+} */
