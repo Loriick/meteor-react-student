@@ -31,9 +31,10 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.data);
     const data = this.state.data;
-    Students.insert({ data });
+    Meteor.call("students", data, function(err, result) {
+      console.log(result);
+    });
 
     this.setState({
       data: {
