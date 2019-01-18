@@ -18,4 +18,21 @@
             text-decoration: none;
         }
     }
+    &-img{
+        width: 200px;
+        height: 50px;
+    }
+    &.header-dashboard{
+        background: $black;
+        .header-menu{
+            margin: 0;
+            padding: 16px 21px;
+        }
+        .header-login{
+            font-size: 14px;
+            a{
+                color: $white;
+            }
+        }
+    }
 }

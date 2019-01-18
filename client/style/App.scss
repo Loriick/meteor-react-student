@@ -1,16 +1,25 @@
 // Globals
 
 @import './globals/reset';
-@import './globals/_variables';
+@import './globals/variables';
 @import './globals/globals';
 
 // Components
 
-@import './components/_header';
-@import './components/_form';
+@import './components/header';
+@import './components/form';
+@import './components/dashboard';
 
 .App{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 150px 120px 0;
+    &-img{
+        height: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
 }

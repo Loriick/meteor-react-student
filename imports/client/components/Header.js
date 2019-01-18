@@ -1,47 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+let headerContent = (page , eventClick) => {
+  if(page === 'signIn'){
+    return(
+      <li className="header-login">
+        <p>Vous n'avez pas de compte ?</p>
+        <Link to="/signup" onClick={eventClick}>Inscrivez-vous</Link>
+      </li>
+    )
+  } else if(page === 'signUp'){
+    return(
+      <li className="header-login">
+        <p>Vous avez déjà un compte ?</p>
+        <Link to="/" onClick={eventClick}>Connectez-vous</Link>
+      </li>
+    )
+  } else {
+    return(
+      <li className="header-login">
+        <Link to="/logout" onClick={eventClick}>Se déconnecter</Link>
+      </li>
+    )
+  }
+} 
+
 const Header = ({ name = "Admin", logout, page, eventClick, isLogged }) => {
   return (
-    <div className="header">
-      <nav className="header-menu">
-        <Link to="/">
-          <img src="assets/img/logo.svg" alt="logo meteor" />
+    <div className={"header" + " " + (page !== 'signIn' && page !== 'signUp' ? "header-dashboard" : "")}>
+      <nav className="header-menu">  
+      {page !== 'signIn' && page !== 'signUp' ?
+        <Link to="/dashboard">
+          <img src='assets/img/logo-user.svg' alt="logo meteor" className="header-img"/>
         </Link>
-        <ul>
-          {/* <li>
-            <Link to="/addnotes">Add a note</Link>
-          </li>
-          <li>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-          {isLogged && (
-          <li>
-            <Link to="/logout">Log Out</Link>
-          </li>
-          )} */}
 
-          {!isLogged ? (
-            page === "signIn" ? (
-              <li className="header-login">
-                <p>Vous n'avez pas de compte ?</p>
-                <Link to="/signup">Inscrivez-vous</Link>
-              </li>
-            ) : (
-              <li className="header-login">
-                <p>Vous avez déjà un compte ?</p>
-                <Link to="/" onClick={eventClick}>
-                  Connectez-vous
-                </Link>
-              </li>
-            )
-          ) : (
-            <li className="header-login">
-              <Link to="/" onClick={eventClick}>
-                déconnection
-              </Link>
-            </li>
-          )}
+        :
+        <Link to="/">
+          <img src='assets/img/logo.svg' alt="logo meteor" className="header-img"/>
+        </Link>
+      }
+        <ul>
+        {headerContent(page , eventClick)}
         </ul>
       </nav>
     </div>

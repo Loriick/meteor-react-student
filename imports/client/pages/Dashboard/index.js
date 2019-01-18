@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Form from "../../components/Form";
 import Header from "../../components/Header";
 import List from "../../components/List";
+import Students from "../../../api/Student"
 
 export default class Dashboard extends Component {
   state = {
@@ -22,9 +23,9 @@ export default class Dashboard extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.data);
     const data = this.state.data;
-    Students.insert({ data });
+
+    // Meteor.call("insertStudents", data);
 
     this.setState({
       data: {
@@ -48,13 +49,13 @@ export default class Dashboard extends Component {
     return (
       <div>
         <Header />
+        <List deleteStudent={this.deleteStudent} />
         <Form
           isOpen={this.state.isOpen}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
           data={this.state.data}
         />
-        <List deleteStudent={this.deleteStudent} />
       </div>
     );
   }

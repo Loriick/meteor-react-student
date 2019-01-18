@@ -31,47 +31,67 @@ class Signup extends Component {
   };
 
   render() {
+    if(this.state.isLogged){
+      return(
+        <Redirect to="/dashboard"/>
+      )
+    }
     return (
       <div>
         <Header page="signUp" isLogged={this.state.isLogged} />
-        <div className="form">
-          <h1 className="form-title">
-            Bienvenue sur <span>Meteor School</span>
-          </h1>
-          <h4 className="form-subtitle">Inscrivez-vous</h4>
-          <form onSubmit={this.handleSubmit} className="form-container">
-            <input
-              type="text"
-              name="name"
-              placeholder="Nom"
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="firstname"
-              placeholder="Prénom"
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Adresse Email"
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Mot de Passe"
-              onChange={this.handleChange}
-              required
-            />
-            <div className="form-footer">
-              <input type="submit" value="Créer votre compte" />
-            </div>
-          </form>
+        <div className="App">
+          <div className="form">
+            <h1 className="form-title">
+              Bienvenue sur <span>Meteor School</span>
+            </h1>
+            <h4 className="form-subtitle">Inscrivez-vous</h4>
+            <form onSubmit={this.handleSubmit} className="form-container">
+              <div className="form-shadow">
+                <div className="form-input">
+                  <label>Nom</label>
+                  <input
+                    type="text"
+                    name="name"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-input">
+                  <label>Prénom</label>
+                  <input
+                    type="text"
+                    name="firstname"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-input">
+                  <label>Adresse Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-input">
+                  <label>Mot de Passe</label>
+                  <input
+                    type="password"
+                    name="password"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-footer form-footer_right">
+                <input type="submit" value="Créer votre compte" className="btn btn-blue"/>
+              </div>
+            </form>
+          </div>
+          <div className="App-img">
+            <img src="assets/img/illustration.png" alt="illustration"/>
+          </div>
         </div>
       </div>
     );

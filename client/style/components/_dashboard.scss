@@ -1,0 +1,31 @@
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    background: $bg-grey;
+    &-students{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        &_container {
+            a{
+                font-size: 14px;
+                color: $purple;
+                text-decoration: none;
+            }
+            img{
+                margin-right: 16px;
+            }
+        }
+        &_delete{
+            cursor: pointer;
+        }
+    }
+
+    .left-side{
+        width: 272px;
+        display: flex;
+        flex-direction: column;
+        background: $white;
+    }
+}
