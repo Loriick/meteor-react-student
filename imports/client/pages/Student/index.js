@@ -2,17 +2,18 @@ import React from "react";
 import { Students } from "../../../api/Student";
 import { withTracker } from "meteor/react-meteor-data";
 import Header from "../../components/Header";
+import { Meteor } from "meteor/meteor";
 
 const Student = props => {
-  const students = props.students;
-  if (!students) {
-    return <div>loading</div>;
-  }
+  // const students = props.students;
+  // if (!students) {
+  //   return <div>loading</div>;
+  // }
+  console.log(props);
   return (
     <div>
-      <Header />
       <h1>welcome in student</h1>
-      <h3>
+      {/* <h3>
         {students.data.name} {students.data.firstname}
       </h3>
       <a href={students.data.github} target="_blank">
@@ -27,11 +28,11 @@ const Student = props => {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 };
 
 export default withTracker(props => {
-  return { students: Students.findOne(props.match.params.id) };
+  return { students: Meteor.users.findOne(Meteor.userId) };
 })(Student);

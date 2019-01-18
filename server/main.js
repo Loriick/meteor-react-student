@@ -4,13 +4,10 @@ import { Students, Notes } from "../imports/api/Student";
 
 Meteor.methods({
   insertStudents: data => {
-    console.log(data);
-    const { profile, email, github } = data;
+    const { profile, firstname, email } = data;
     check(profile.name, String);
     check(profile.firstname, String);
     check(email, String);
-    check(github, String);
-
     try {
       Students.insert({ data });
       let id = Accounts.createUser(data);

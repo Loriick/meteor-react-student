@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-let headerContent = (page , eventClick) => {
+let headerContent = (page , eventClick , logout) => {
   if(page === 'signIn'){
     return(
       <li className="header-login">
@@ -20,7 +20,7 @@ let headerContent = (page , eventClick) => {
   } else {
     return(
       <li className="header-login">
-        <Link to="/logout" onClick={eventClick}>Se déconnecter</Link>
+        <Link to="/" onClick={logout}>Se déconnecter</Link>
       </li>
     )
   }
@@ -41,7 +41,7 @@ const Header = ({ name = "Admin", logout, page, eventClick, isLogged }) => {
         </Link>
       }
         <ul>
-        {headerContent(page , eventClick)}
+        {headerContent(page , eventClick , logout)}
         </ul>
       </nav>
     </div>

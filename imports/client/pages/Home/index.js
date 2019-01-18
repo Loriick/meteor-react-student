@@ -67,6 +67,7 @@ class Home extends Component {
 
   render() {
     const currentUser = Meteor.userId();
+    console.log(currentUser);
 
     return (
       <div>
@@ -82,6 +83,4 @@ class Home extends Component {
   }
 }
 
-export default withTracker(props => {
-  return { users: Meteor.users.find(Meteor.userId()).fetch() };
-})(Home);
+export default Home;

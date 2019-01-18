@@ -19,7 +19,7 @@ const App = props => {
         <Route exact path="/" component={Home} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" component={Dashboard}/>
         <Route path="/student/:id" component={Student} />
         <Route path="/addnotes" component={AddNotes} />
         <Route component={NotFound} />
@@ -28,6 +28,4 @@ const App = props => {
   );
 };
 
-export default withTracker(() => {
-  return { users: Meteor.users.findOne(Meteor.userId) };
-})(App);
+export default App;

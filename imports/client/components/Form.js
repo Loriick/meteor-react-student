@@ -40,17 +40,6 @@ const Form = ({ onChange, onSubmit, data }) => {
             />
             <label htmlFor="email">email</label>
           </div>
-          <div className="input-container">
-            <input
-              onChange={onChange}
-              type="text"
-              name="github"
-              id="github"
-              value={data.github}
-              required
-            />
-            <label htmlFor="github">Github link</label>
-          </div>
 
           <button type="submit">Submit</button>
         </form>
