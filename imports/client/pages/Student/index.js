@@ -1,7 +1,7 @@
 import React from "react";
-import { Students } from "../api/Student";
+import { Students } from "../../../api/Student";
 import { withTracker } from "meteor/react-meteor-data";
-import Header from "./Header";
+import Header from "../../components/Header";
 
 const Student = props => {
   const students = props.students;
@@ -18,9 +18,7 @@ const Student = props => {
       <a href={students.data.github} target="_blank">
         github link
       </a>
-      <a href={`mailto:${students.data.email}`} target="_blank">
-        envoyez un mail
-      </a>
+      <a href={`mailto:${students.data.email}`}>envoyez un mail</a>
       <ul>
         {students.exercice.map(student => {
           return (

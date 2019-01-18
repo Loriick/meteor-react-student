@@ -1,0 +1,21 @@
+.header{
+    &-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px 50px 0;
+    }
+    &-login{
+        display: flex;  
+        align-items: center;
+        font-size: 17px;
+        p{
+            color: $grey;
+            margin-right: 10px;
+        }
+        a{
+            color: $blue;
+            text-decoration: none;
+        }
+    }
+}

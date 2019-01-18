@@ -1,0 +1,71 @@
+.form{
+    &-title{
+        font-size: 30px;
+        span{
+            color: $red;
+        }
+    }
+    &-subtitle{
+        color: $grey;
+        font-size: 20px;
+        margin: 10px 0 40px;
+    }
+    &-container{
+        display: flex;
+        flex-direction: column;
+        input{
+            &[type="text"]{
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                border: none;
+                box-shadow: 0px -4px 10px 0px rgba(0,0,0,0.2);
+            }
+            &[type="password"]{
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border: none;
+                box-shadow: 0px 4px 10px 0 rgba(0,0,0,0.2);
+            }
+        }
+    }
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        a{
+            color: $blue; 
+            font-size: 15px;
+            text-decoration: none;
+        }
+    }
+    &-input{
+        position: relative;
+        label{
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-size: 14px;
+            color: $grey;
+        }
+        input{
+            width: 100%;
+            transition: .2s;
+            font-size: 17px;
+            padding: 37px 25px 15px;
+            outline: none;
+            &:focus{
+                border-left: 8px solid $red;
+                transition: .2s;
+            }
+            &::after{
+                content: '';
+                width: 8px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+            }
+        }
+    }
+}

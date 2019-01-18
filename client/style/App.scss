@@ -1,0 +1,16 @@
+// Globals
+
+@import './globals/reset';
+@import './globals/_variables';
+@import './globals/globals';
+
+// Components
+
+@import './components/_header';
+@import './components/_form';
+
+.App{
+    display: flex;
+    justify-content: space-between;
+    margin: 150px 120px 0;
+}

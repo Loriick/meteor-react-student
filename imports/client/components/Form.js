@@ -38,7 +38,7 @@ const Form = ({ onChange, onSubmit, data }) => {
               value={data.email}
               required
             />
-            <label htmlFor="github">email</label>
+            <label htmlFor="email">email</label>
           </div>
           <div className="input-container">
             <input

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTracker } from "meteor/react-meteor-data";
-import { Students, Notes } from "../api/Student";
-import Header from "./Header";
+import { Students, Notes } from "../../../api/Student";
+import Header from "../../components/Header";
 
 class AddNotes extends Component {
   state = {
