@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/20px/desktop [#231]</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14.4,2.4 C14.4,1.9584 14.0416,1.6 13.6,1.6 L2.4,1.6 C1.9584,1.6 1.6,1.9584 1.6,2.4 L1.6,10.4 C1.6,10.8416 1.9584,11.2 2.4,11.2 L13.6,11.2 C14.0416,11.2 14.4,10.8416 14.4,10.4 L14.4,2.4 Z M16,1.22 L16,1.2224 L16,10.8224 L16,10.8256 C16,11.7072 15.4624,12.8 14.5808,12.8 L9.7776,12.8 C9.336,12.8 8.9776,13.1584 8.9776,13.6 C8.9776,14.0416 9.336,14.4 9.7776,14.4 L12.1776,14.4 C12.62,14.4 12.9776,14.7584 12.9776,15.2 C12.9776,15.6416 12.62,16 12.1776,16 L4.1776,16 C3.736,16 3.3776,15.6416 3.3776,15.2 C3.3776,14.7584 3.736,14.4 4.1776,14.4 L6.5776,14.4 C7.02,14.4 7.3776,14.0416 7.3776,13.6 C7.3776,13.1584 7.02,12.8 6.5776,12.8 L1.7808,12.8 L1.7776,12.8 C0.8944,12.8 0,11.7064 0,10.8224 L0,1.2224 C0,0.3392 0.8944,0 1.7776,0 L1.7808,0 L14.5808,0 C15.4624,0 16,0.3376 16,1.22 L16,1.22 Z M9.5552,6.364 L7.0824,7.8976 C6.8144,8.0664 6.4,7.8736 6.4,7.5568 L6.4,4.4888 C6.4,4.172 6.8144,3.9792 7.0824,4.148 L9.588,5.6816 C9.8392,5.84 9.8064,6.2056 9.5552,6.364 L9.5552,6.364 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="📦Other/Building-Elements/Blue-Menu/Item" transform="translate(-16.000000, -16.000000)">
+            <g id="Icon/20px/desktop-[#231]" transform="translate(16.000000, 16.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="desktop-[#231]" fill-opacity="0" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <g id="⚙️Atoms/Colour/Grey-Darker/1---100%" mask="url(#mask-2)" fill="#9EA0A5">
+                    <g transform="translate(-0.800000, -0.800000)" id="Colour">
+                        <rect x="0" y="0" width="18" height="18"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

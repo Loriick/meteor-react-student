@@ -1,0 +1,12 @@
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    background: $bg-grey;
+    &-container{
+        display: flex;
+    }
+    &-content{
+        width: 70%;
+        margin: 60px 30px 0;
+    }
+}
